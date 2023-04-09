@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DiaryController;
 
@@ -16,9 +17,12 @@ use App\Http\Controllers\DiaryController;
 |
 */
 
+
 Route::get('/', [PostController::class, 'index']);
 Route::post('/posts',  [PostController::class, 'store']);
+Route::post('/comments',  [CommentController::class, 'store']);
 Route::get('/posts/create',  [PostController::class, 'create']);
+Route::get('/comments/{post}/create',  [CommentController::class, 'create']);
 Route::get('/posts/{post}',  [PostController::class, 'show']);
 Route::put('/posts/{post}',  [PostController::class, 'update']);
 Route::delete('/posts/{post}',  [PostController::class, 'delete']);
@@ -33,3 +37,4 @@ Route::get('/diaries/{diary}',  [DiaryController::class, 'show']);
 //Route::delete('/diaries/{diary}',  [DiaryController::class, 'delete']);
 //Route::get('/diaries/{diary}/edit',  [DiaryController::class, 'edit']);
 //Route::get('/categories/{category}', [CategoryController::class,'index']);
+
