@@ -29,10 +29,10 @@ Route::delete('/posts/{post}',  [PostController::class, 'delete']);
 Route::get('/posts/{post}/edit',  [PostController::class, 'edit']);
 Route::get('/categories/{category}', [CategoryController::class,'index']);
 
-Route::get('/diaries', [DiaryController::class, 'index']);
-//Route::post('/diaries/store',  [DiaryController::class, 'store']);
-//Route::get('/diaries/create',  [DiaryController::class, 'create']);
-Route::get('/diaries/{diary}',  [DiaryController::class, 'show']);
+Route::get('/diaries', [DiaryController::class, 'index']); //1
+Route::post('/diaries/store',  [DiaryController::class, 'store']); //4
+Route::get('/diaries/create',  [DiaryController::class, 'create']); //3
+Route::get('/diaries/{diary}',  [DiaryController::class, 'show']); //2
 //Route::put('/diaries/{diary}',  [DiaryController::class, 'update']);
 //Route::delete('/diaries/{diary}',  [DiaryController::class, 'delete']);
 //Route::get('/diaries/{diary}/edit',  [DiaryController::class, 'edit']);

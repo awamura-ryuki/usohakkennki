@@ -18,4 +18,16 @@ class DiaryController extends Controller
         return view('diaries/show')->with(['diary' => $diary]);
         //'post'はbladeファイルで使う変数。中身は$postはid=1のPostインスタンス。
     }
+    
+    public function create()
+    {
+        return view('diaries/create');
+    }
+    
+    public function store(Request $request, Diary $diary)
+    {
+        $input = $request['diary'];
+        $diary->fill($input)->save();
+        return redirect('/diaries/' . $diary->id);
+    }
 }
