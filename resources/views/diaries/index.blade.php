@@ -11,7 +11,9 @@
         <div class='diaries'>
             @foreach ($diaries as $diary)
                 <div class='diary'>
-                    <h2 class='title'>{{ $diary->title }}</h2>
+                    <h2 class='title'>
+                        <a href="/diaries/{{ $diary->id }}">{{ $diary->title }}</a>
+                    </h2>
                     <p class='body'>{{ $diary->body }}</p>
                 </div>
             @endforeach
