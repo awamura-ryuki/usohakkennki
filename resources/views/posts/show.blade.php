@@ -12,11 +12,24 @@
         <div>
             <p>タイトル：{{ $post->title }}</p>
             <p>本文：{{ $post->body }}</p>
-            <p>カテゴリー：<a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a></p>
+            <!--<p>カテゴリー：<a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a></p>-->
         </div>
         <div>
             <p class="edit">[<a href="/posts/{{ $post->id }}/edit">編集</a>]</p>
+            
+            
+            <a href='/comments/{{$post->id}}/create'>新規コメント</a>
+            @foreach ($comments as $comment)
+                <div style='border:solid 1px; margin-bottom: 10px;'>
+                    <p>本文：{{ $comment->body }}</p>
+                </div>
+            @endforeach
+            
+            
             <a href="/">戻る</a>
         </div>
+        
+        
+        
     </body>
 </html>

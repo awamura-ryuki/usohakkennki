@@ -5,7 +5,7 @@
         <title>Blog</title>
     </head>
     <body>
-        <h1>チーム開発会へようこそ！</h1>
+        <h1>成果物掲示板</h1>
         <h2>投稿作成</h2>
         <form action="/posts" method="POST">
             @csrf
@@ -16,7 +16,7 @@
             </div>
             <div>
                 <h2>本文</h2>
-                <textarea name="post[body]" placeholder="今日も1日お疲れさまでした。">{{ old('post.body') }}</textarea>
+                <textarea name="post[body]" placeholder="URL、工夫した点やこだわりポイントなど">{{ old('post.body') }}</textarea>
                 <p class="body__error" style="color:red">{{ $errors->first('post.body') }}</p>
             </div>
             <div>
