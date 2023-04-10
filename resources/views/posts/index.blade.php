@@ -10,6 +10,7 @@
         <h1>成果物掲示板</h1>
         <h2>投稿一覧画面</h2>
         <a href='/posts/create'>新規投稿</a>
+        <a href='/diaries'>日記を開く</a>
         <div>
             @foreach ($posts as $post)
                 <div style='border:solid 1px; margin-bottom: 10px;'>
